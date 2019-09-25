@@ -97,13 +97,6 @@ public class Boundary {
 
     public static void main(String[] args) throws IOException {
 
-        ReadBoundData("D:\\d3d_workdir\\1009_PROJECT\\BOUNDARY\\bound1_amp_phs.out");
-        writeData("D:\\d3d_workdir\\1009_PROJECT\\BOUNDARY\\out_grd1");
-        writeBND("D:\\d3d_workdir\\1009_PROJECT\\BOUNDARY\\BND_1grd.bnd", 134, 6, 121);
-
-        ReadBoundData("D:\\d3d_workdir\\1009_PROJECT\\BOUNDARY\\bound2_amp_phs.out");
-        writeData("D:\\d3d_workdir\\1009_PROJECT\\BOUNDARY\\out_grd2");
-        writeBND("D:\\d3d_workdir\\1009_PROJECT\\BOUNDARY\\BND_2grd.bnd", 267, 148, 218);
 
     }
 
