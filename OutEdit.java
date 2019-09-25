@@ -11,7 +11,7 @@ public class OutEdit {
         ArrayList<Double> yList = new ArrayList<>();
 
         BufferedReader bufferedReader;
-        String fileName = "D:\\d3d_workdir\\30yearsProject\\MainDataProcessing\\src\\ReaderWriter\\out2";
+        String fileName = "";
 
         bufferedReader = new BufferedReader(new FileReader(fileName));
         String[] line;
@@ -27,7 +27,7 @@ public class OutEdit {
         }
         bufferedReader.close();
 
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D:\\d3d_workdir\\30yearsProject\\MainDataProcessing\\src\\ReaderWriter\\out3"));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(""));
 
         for (int i = 0; i < xList.size(); i++) {
             bufferedWriter.write(xList.get(i) + " " + yList.get(i) + "\n");
