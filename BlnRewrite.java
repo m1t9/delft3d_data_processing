@@ -58,8 +58,7 @@ public class BlnRewrite {
 
     public static void main(String[] args) throws IOException {
 
-//        String folderPath = "D:\\d3d_workdir\\1009_PROJECT\\for LASh";
-        String folderPath = "D:\\d3d_workdir\\1009_PROJECT\\for LASh\\islands";
+        String folderPath = "";
         File folder = new File(folderPath);
 
         File[] listOfFiles = folder.listFiles();
@@ -77,7 +76,7 @@ public class BlnRewrite {
             dataBlock = readData(folderPath + "\\" + file.getName());
 
             int count = 1;
-            String folderWritePath = "D:\\d3d_workdir\\1009_PROJECT\\for LASh\\out_dat\\";
+            String folderWritePath = "";
 
             BufferedWriter bufferedWriter;
 
