@@ -32,6 +32,8 @@ public class Delft3dValueFile {
 
     private ArrayList<String> unit;
 
+    private int factor = 0;
+
 //    n_Quantity > 1 not supported yet;
     private String quantity1;
 
@@ -54,6 +56,10 @@ public class Delft3dValueFile {
         if (n_quantity > 1) {
             throw new UnsupportedOperationException("Not supported yet");
         }
+    }
+
+    public void setFactor(int factor) {
+        this.factor = factor;
     }
 
     public void setFiletype(String filetype) {
@@ -92,11 +98,11 @@ public class Delft3dValueFile {
         this.n_quantity = n_quantity;
     }
 
-    public void setQuantity1(String quantity1) {
+    public void setQuantity(String quantity1) {
         this.quantity1 = quantity1;
     }
 
-    public void setUnit1(String unit1) {
+    public void setUnit(String unit1) {
         this.unit1 = unit1;
     }
 
@@ -152,5 +158,7 @@ public class Delft3dValueFile {
         return unit1;
     }
 
-
+    public int getFactor() {
+        return factor;
+    }
 }
