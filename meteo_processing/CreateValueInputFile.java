@@ -33,8 +33,8 @@ public class CreateValueInputFile {
             e.printStackTrace();
         }
 
-        String startTime = "1988-05-1";
-        String timeStep = "1"; // in hours
+        String startTime = "1988-05-01";
+        int timeStep = 1; // in hours
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFileName));
 
@@ -63,7 +63,7 @@ public class CreateValueInputFile {
                 bufferedWriter.write(String.format("TIME = %s hours since %s 00:00:00 +00:00\n",
                         String.valueOf(hourCount), startTime));
                 mainLoop = 0;
-                hourCount += 6;
+                hourCount += timeStep;
             }
 
             if (delft3dValueFile.getFactor() == 0) {
@@ -86,34 +86,8 @@ public class CreateValueInputFile {
 
     }
 
-
-
     public static void main(String[] args) throws IOException {
 
-        Delft3dValueFile delft3dValueFile =
-                new Delft3dValueFile("meteo_on_equidistant_grid", 265, 49,
-                        "degree", 27.0, 77.5, -0.25, 0.25, 1,
-                        "x_wind", "m s-1");
-
-        writeMeteoData("D:\\d3d_workdir\\1009_PROJECT\\Данные реанализа ERA5 (Чанцеву_ВЮ)\\U_1979-2018\\1988_U.txt",
-                "D:\\d3d_workdir\\30yearsProject\\METEO\\1988_d3d.amu",
-                delft3dValueFile);
-
-        delft3dValueFile.setQuantity("y_wind");
-
-        writeMeteoData("D:\\d3d_workdir\\1009_PROJECT\\Данные реанализа ERA5 (Чанцеву_ВЮ)\\V_1979-2018\\1988_V.txt",
-                "D:\\d3d_workdir\\30yearsProject\\METEO\\1988_d3d.amv",
-                delft3dValueFile);
-
-        delft3dValueFile.setQuantity("air_pressure");
-        delft3dValueFile.setUnit("Pa");
-        delft3dValueFile.setFactor(1000);
-
-        writeMeteoData("D:\\d3d_workdir\\1009_PROJECT\\Данные реанализа ERA5 (Чанцеву_ВЮ)\\MSL_1979-2018\\1988_MSL.txt",
-                "D:\\d3d_workdir\\30yearsProject\\METEO\\1988_MSL.amp",
-                delft3dValueFile);
-
-
-    }
+     }
 
 }
