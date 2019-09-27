@@ -21,7 +21,8 @@ public class CreateValueInputFile {
 
     }
 
-    protected static void writeMeteoData(String inputFileName, String outputFileName, Delft3dValueFile delft3dValueFile)
+    protected static void writeMeteoData(String inputFileName, String outputFileName, Delft3dValueFile delft3dValueFile,
+                                         int year)
             throws IOException {
 
         ArrayList<String> data = null;
@@ -33,7 +34,7 @@ public class CreateValueInputFile {
             e.printStackTrace();
         }
 
-        String startTime = "1988-05-01";
+        String startTime = String.valueOf(year) + "-05-01";
         int timeStep = 1; // in hours
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFileName));
@@ -80,14 +81,14 @@ public class CreateValueInputFile {
 
         }
 
-        System.out.println(delft3dValueFile.getQuantity() + " complete");
+        System.out.println(delft3dValueFile.getQuantity() + " " + year + " complete");
 
         bufferedWriter.close();
 
     }
 
     public static void main(String[] args) throws IOException {
-    	
+
     }
 
 }
